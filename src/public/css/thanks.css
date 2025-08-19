@@ -1,0 +1,43 @@
+* {
+    font-family: "Inika", serif;
+    font-weight: 400;
+}
+
+.thanks-message {
+    position: relative;
+}
+.back-thanks {
+    font-size: 280px;
+    color:rgba(139, 121, 105, 0.05);
+    width: 1381px;
+    height: 365px;
+    position: absolute;
+    margin: 0;
+    top: 319px;
+    left: 66px;
+}
+
+.front-thanks {
+    font-size: 30px;
+    font-weight: 700;
+    color: #8B7969;
+    width: 510px;
+    height: 39px;
+    position: absolute;
+    margin: 0;
+    top: 461px;
+    left: 501px;
+}
+
+.home-button {
+    font-size: 20px;
+    color: #ffffff;
+    background-color: #82756A;
+    border: none;
+    width: 140px;
+    height: 46px;
+    position: absolute;
+    top: 555px;
+    left: 686px;
+    cursor: pointer;
+}

@@ -1,0 +1,73 @@
+.header {
+    position: relative;
+}
+
+.title__button {
+    position: absolute;
+    left: 1316px;
+    border: 1px solid #D9C6B5;
+    width: 100px;
+    color: #D9C6B5;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.log_title {
+    color: #8B7969;
+    text-align: center;
+    font-size: 35px;
+    margin: 0 auto;
+    padding: 50px 0;
+    width: 134px;
+}
+
+.login {
+    border: 1px solid #C5B9B0;
+    border-radius: 10px;
+    width: 736px;
+    height: 579px;
+    margin: 0 auto;
+    padding: 100px 146px 6px 146px;
+    background-color: #ffffff;
+}
+
+main {
+    background-color: #f1ece7;
+    padding-bottom: 50px;
+}
+
+label {
+    font-size: 25px;
+    color: #8B7969;
+}
+
+.form__input input {
+    width: 445px;
+    height: 55px;
+    background-color: #f4f4f4;
+    border: none;
+    margin-top: 10px;
+    margin-bottom: 50px;
+}
+
+::placeholder {
+    color:#BEB1A6;
+    font-size: 14px;
+    font-family: "Inika", serif;
+    padding: 10px 33px;
+}
+
+.login-button {
+    margin:30px auto;
+    text-align: center;
+}
+
+.form__button-submit {
+    background-color: #82756A;
+    color: #ffffff;
+    width: 120px;
+    height: 46px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+}

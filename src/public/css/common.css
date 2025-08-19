@@ -1,0 +1,17 @@
+.header {
+    border-bottom: 1px solid #E0DFDE;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+* {
+    font-family: "Inika", serif;
+    font-weight: 400;
+}
+
+.logo_title {
+    color: #8B7969;
+    font-size: 40px;
+    max-width: 1512px;
+}
