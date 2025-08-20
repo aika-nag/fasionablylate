@@ -11,14 +11,14 @@ use App\Http\Requests\ContactRequest;
 class ContactController extends Controller
 {
     public function index() {
-        $contacts = Contact::with('category')->get();
         $categories = Category::all();
-        return view('index', compact('contacts', 'categories'));
+        return view('index', compact('categories'));
     }//
 
     public function confirm(ContactRequest $request){
+        $contacts = Contact::with('category')->get();
         $tel = $request->tel1.$request->tel2.$request->tel3;
-        $category = Category::all($request->category_id);
+        $category = Category::find($request->category_id);
         $contact = $request->only(['last_name','first_name','gender','email', 'tel1', 'tel2', 'tel3', 'address', 'building', 'detail']);
         return view('confirm', compact('contact','tel', 'category'));
     }

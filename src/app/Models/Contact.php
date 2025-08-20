@@ -20,12 +20,6 @@ class Contact extends Model
         'building',
         'detail'
     ];
-
-    public function categories()
-    {
-        return $this->hasMany('App\Models\Category');
-
-    }
     
     public function category(){
         return $this->belongsTo(Category::class);

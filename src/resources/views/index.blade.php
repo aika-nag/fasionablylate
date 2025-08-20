@@ -47,7 +47,7 @@
         </tr>
         <tr>
             <th>
-                <label for="mail">メールアドレス
+                <label for="email">メールアドレス
                 <span class="form__label--required">※</span>
                 </label>
             </th>
