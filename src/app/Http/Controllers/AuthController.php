@@ -11,10 +11,7 @@ use App\Models\Category;
 
 class AuthController extends Controller
 {
-    //
-    public function index(){
-        return view('admin');
-    }
+
 
     public function create(AuthRequest $request)
     {
@@ -25,10 +22,13 @@ class AuthController extends Controller
 
     public function login(LoginRequest $request)
     {
-        $contacts = Contact::all();
+        $contacts = Contact::Paginate(7);
+        $contacts->withPath('/admin');
         $categories = Category::all();
         $credentials = $request->all();
-        return view('admin',compact('contacts', 'categories'));
+        $email = $request->input('email');
+        $request->session()->put('email', $email);
+        return view('auth.admin',compact('contacts', 'categories'));
 
         return back()->withErrors($message);
     }
@@ -38,6 +38,12 @@ class AuthController extends Controller
         $contacts = Contact::with('category')->KeywordSearch($request->keyword)->get();
         $categories = Category::all();
 
-        return view('admin', compact('contacts', 'categories'));
+        return view('auth.admin', compact('contacts', 'categories'));
+    }
+
+    public function getSes(Request $request)
+    {
+        $data = $request->session()->get('email');
+        return view('auth.login', ['data' => $data]);
     }
 }

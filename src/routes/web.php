@@ -27,6 +27,8 @@ Route::get('/thanks', [ContactController::class, 'thanks']);
 
 Route::post('/register', [AuthController::class, 'create']);
 Route::post('/login', [AuthController::class, 'login']);
+Route::get('/login', [AuthController::class, 'getSes']);
+
 Route::get('/admin/search', [AuthController::class, 'search']);
 
 Route::middleware('auth')->group(function () {

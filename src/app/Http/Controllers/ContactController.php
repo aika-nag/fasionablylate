@@ -26,6 +26,7 @@ class ContactController extends Controller
     public function store(Request $request){
         $tel = array("tel"=>$request->tel1.$request->tel2.$request->tel3);
         $category = Category::find($request->category_id);
+        
         $contact = $request->only(['last_name','first_name','gender','email', 'address', 'building', 'category_id','detail']);
         Contact::create([
             'category_id' => $category['id'],
