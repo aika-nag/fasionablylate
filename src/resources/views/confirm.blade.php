@@ -6,7 +6,7 @@
 
 @section('content')
 <h2 class="confirm_title">Confirm</h2>
-<form action="/" class="confirm" method="post">
+<form action="/thanks" class="confirm" method="post">
     @csrf
     <table>
         <tr>
@@ -17,9 +17,9 @@
         </tr>
         <tr>
             <th>性別</th>
-            @if($contact['gender'] === 1)
+            @if($contact['gender'] === "1")
             <td>男性</td>
-            @elseif($contact['gender'] === 2)
+            @elseif($contact['gender'] === "2")
             <td>女性</td>
             @else
             <td>その他</td>
@@ -60,7 +60,7 @@
 
     <div class="confirm-button">
         <button class="confirm__button-submit" type="submit">送信</button>
-        <button class="correct__button-submit" type="submit" formaction="/">修正</button>
+        <button class="correct__button-submit" type="submit" name="back">修正</button>
     </div>
 </form>
 @endsection

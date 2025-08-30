@@ -36,9 +36,9 @@
             </th>
             <td>
                 <div class="form__input--gender">
-                    <input type="radio" name="gender" value="1">男性
-                    <input type="radio" name="gender" value="2" >女性
-                    <input type="radio" name="gender" value="3" >その他
+                    <input type="radio" name="gender" value="1"{{old('gender')==1 || old('gender')==null ? 'checked':''}}>男性
+                    <input type="radio" name="gender" value="2"{{old('gender')==2 ? 'checked':''}} >女性
+                    <input type="radio" name="gender" value="3" {{old('gender')==3 ? 'checked':''}}>その他
                 </div>
                 @error('gender')
                 <span style="color: red;font-size:14px;margin-top:3px;">{{ $errors->first('gender') }}</span>
@@ -106,7 +106,7 @@
                 <select name="category_id" id="category_id" required>
                 <option value="">選択してください</option>
                 @foreach ($categories as $category)
-                <option value="{{ $category['id'] }}">{{ $category['content'] }}</option>
+                <option value="{{ $category['id'] }}"{{old('category_id')==$category->id ? 'selected' : ''}}>{{ $category['content'] }}</option>
                 @endforeach
                 @error('category_id')
                 <span style="color: red;font-size:14px;margin-top:3px;">{{ $errors->first('category_id') }}</span>
@@ -121,7 +121,7 @@
                 </label>
             </th>
             <td>
-                <textarea name="detail" id="detail" placeholder="お問い合わせ内容をご記載ください" value="{{ old('detail') }}" ></textarea>
+                <textarea name="detail" id="detail" placeholder="お問い合わせ内容をご記載ください">{{ old('detail') }}</textarea>
                 @error('detail')
                 <span style="color: red;font-size:14px;margin-top:3px;">{{ $errors->first('detail') }}</span>
                 @enderror

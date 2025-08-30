@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ContactController;
 use App\Http\Controllers\AuthController;
+use App\Models\Contact;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -21,9 +22,7 @@ Route::get('/', function () {
 
 Route::get('/', [ContactController::class, 'index']);
 Route::post('/confirm', [ContactController::class, 'confirm']);
-Route::post('/', [ContactController::class, 'store']);
-Route::get('/confirm', [ContactController::class,'confirm']);
-Route::get('/thanks', [ContactController::class, 'thanks']);
+Route::post('/thanks', [ContactController::class, 'store']);
 
 Route::post('/register', [AuthController::class, 'create']);
 Route::post('/login', [AuthController::class, 'login']);
